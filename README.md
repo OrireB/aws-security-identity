@@ -53,27 +53,27 @@
 Here are the key screenshots:
 
 - **Screenshot 1**: IAM user creation
-  ![IAM user creation]()
+  ![IAM user creation]()https://raw.githubusercontent.com/OrireB/aws-security-identity/7b248e5a11ac022deb0e8802373a2a1cf85a54ef/IAM%20user%20creation-AfinaTicM4ACE.png
 
 ---
 
 - **Screenshot 2**: Failed attempted access 
-  ![CDenied access when trying to perform restricted actions]()
+  ![CDenied access when trying to perform restricted actions](https://raw.githubusercontent.com/OrireB/aws-security-identity/7b248e5a11ac022deb0e8802373a2a1cf85a54ef/Failed%20attempted%20access.png)
 
 ---
 
 - **Screenshot 3**: MFA setup confirmation
-  ![MFA setup confirmation]()
+  ![MFA setup confirmation](https://raw.githubusercontent.com/OrireB/aws-security-identity/7b248e5a11ac022deb0e8802373a2a1cf85a54ef/MFA%20setup%20confirmation.png)
 
 ---
 
-- **Screenshot 5**: Custom policy creation
-  ![Custom policy creation]()
+- **Screenshot 4**: Custom policy creation
+  ![Custom policy creation](https://raw.githubusercontent.com/OrireB/aws-security-identity/7b248e5a11ac022deb0e8802373a2a1cf85a54ef/Custom%20policy%20creation.png)
 
 ---
 
 - **Screenshot 5**: Role creation with attached policy.
-  ![Role creation with attached policy.]()
+  ![Role creation with attached policy.](https://raw.githubusercontent.com/OrireB/aws-security-identity/7b248e5a11ac022deb0e8802373a2a1cf85a54ef/Role%20creation%20with%20attached%20policy..png)
 
 ## Architectural Diagram
 
