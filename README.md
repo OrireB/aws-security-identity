@@ -3,35 +3,37 @@
 ## 1. IAM User with Restricted Permissions
 
 ### A. Create IAM User
-### 6. Implement a Security Group for Traffic Control:
    1. Sign in to the AWS Management Console.
-   2. 
+   2. Go to IAM > Users > Add users.
+   3. Enter username: **AfinaTic-M4ACE**
+   4. Axxess Type: Check the box - **Provide user access to the AWS Management Console - optional.**
+   5. Check the box- **I want to create an IAM user**
+   6. Set a custom password **(Check "Require password reset").**
 
-Go to IAM > Users > Add users.
+### B. Assign Permissions
+   1. Choose **Attach policies directly.**
+   2. Select only **AmazonS3ReadOnlyAccess** or create a custom policy.
+   3. Click Next > Create user.
+**This gives the user limited read-only access to S3.**
 
-Enter username: limited-user.
+### C. Test Access
+   1. Log in with the newly created IAM user credentials at the AWS sign-in link.
+   2. Attempt to create and delete a bucket.
 
-Select Access key - Programmatic access and AWS Management Console access.
+### Actions Tested:
+   - **Allowed:** Listing S3 buckets.
+   - **Denied:** Creating or deleting S3 buckets.
 
-Set a custom password (uncheck "Require password reset").
+### Expected Results:
+   - User can view S3 buckets
+   - User cannot modify S3 resources 
 
-User Details:
-Username: limited-user
-
-Permissions: Read-only access to Amazon S3
-
-Steps:
-Navigate to IAM > Users > Add user.
-
-Enable AWS Management Console access and programmatic access.
-
-Attach policy: AmazonS3ReadOnlyAccess.
-
-Complete user creation.
-
-## 2. Multi-Factor Authentication (MFA)
-- Enabled Virtual MFA
-- Tested login and received MFA prompt
+## 2. Set-up Multi-Factor Authentication (MFA) for IAM User
+   1. Go to **IAM** > **Users** > **AfinaTic-M4ACE** > **Security credentials.**
+   2. Under **Multi-factor authentication (MFA)**, click **Assign MFA device.**
+   3. Choose **Virtual MFA device,** then use an app like **Google Authenticator.**
+   4. Scan QR code and enter two consecutive codes.
+   5. Save configuration.
 
 ## 3. Custom IAM Policy and Role
 - Created `EC2StartStopPolicy`
