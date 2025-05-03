@@ -53,7 +53,7 @@
 Here are the key screenshots:
 
 - **Screenshot 1**: IAM user creation
-  ![IAM user creation]()https://raw.githubusercontent.com/OrireB/aws-security-identity/7b248e5a11ac022deb0e8802373a2a1cf85a54ef/IAM%20user%20creation-AfinaTicM4ACE.png
+  ![IAM user creation](https://raw.githubusercontent.com/OrireB/aws-security-identity/7b248e5a11ac022deb0e8802373a2a1cf85a54ef/IAM%20user%20creation-AfinaTicM4ACE.png)
 
 ---
 
