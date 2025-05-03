@@ -16,13 +16,10 @@
    3. Click Next > Create user.
 **This gives the user limited read-only access to S3.**
 
-### C. Test Access
-   1. Log in with the newly created IAM user credentials at the AWS sign-in link.
-   2. Attempt to create and delete a bucket.
-
-### Actions Tested:
-   - **Allowed:** Listing S3 buckets.
-   - **Denied:** Creating or deleting S3 buckets.
+### C. Testing IAM User Access
+- **Action**: Attempted to create a new S3 bucket using the AWS Management Console
+- **Outcome**: Access denied, as expected due to the `AmazonS3ReadOnlyAccess` policy.
+- **Error Message**: `An error occurred (AccessDenied) when calling the CreateBucket operation: Access Denied`
 
 ### Expected Results:
    - User can view S3 buckets
@@ -31,9 +28,14 @@
 ## 2. Set-up Multi-Factor Authentication (MFA) for IAM User
    1. Go to **IAM** > **Users** > **AfinaTic-M4ACE** > **Security credentials.**
    2. Under **Multi-factor authentication (MFA)**, click **Assign MFA device.**
-   3. Choose **Virtual MFA device,** then use an app like **Google Authenticator.**
+   3. Choose **Virtual MFA device,** then use the **Google Authenticator.**
    4. Scan QR code and enter two consecutive codes.
    5. Save configuration.
+
+### Testing MFA Setup
+- **Action**: Logged in as `AfinaTic-M4ACE` using the AWS Management Console.
+- **Outcome**: Prompted for MFA code using the **Google Authenticator.**, successfully logged in after entering the code.
+- **Screenshot**: ![MFA Login]([screenshots/mfa-login-prompt.png](https://raw.githubusercontent.com/OrireB/aws-security-identity/5d93100ea28d60e0d74bffa2c72aad6d09566aaf/Testing%20MFA%20Setup.png))
 
 ## 3. Create Custom Policy and Attach to IAM Role
 ### A. Create Custom IAM Policy
@@ -41,6 +43,23 @@
    2. Choose JSON, paste:
    3. **Name:** `EC2StartStopDescribePolicy`
      - Policy allows starting/stopping EC2 instances
+
+**JSON**
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:StartInstances",
+        "ec2:StopInstances"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
 
 ### B. Create and Attach IAM Role
    1. Go to **IAM** > **Roles** > **Create role.**
