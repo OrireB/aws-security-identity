@@ -35,7 +35,8 @@
 ### Testing MFA Setup
 - **Action**: Logged in as `AfinaTic-M4ACE` using the AWS Management Console.
 - **Outcome**: Prompted for MFA code using the **Google Authenticator.**, successfully logged in after entering the code.
-- **Screenshot**: ![MFA Login]([screenshots/mfa-login-prompt.png](https://raw.githubusercontent.com/OrireB/aws-security-identity/5d93100ea28d60e0d74bffa2c72aad6d09566aaf/Testing%20MFA%20Setup.png)
+- **Screenshot 4**: [MFA Login
+  ![[MFA Login](https://raw.githubusercontent.com/OrireB/aws-security-identity/5d93100ea28d60e0d74bffa2c72aad6d09566aaf/Testing%20MFA%20Setup.png)
 
 ## 3. Create Custom Policy and Attach to IAM Role
 ### A. Create Custom IAM Policy
