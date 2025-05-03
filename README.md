@@ -35,51 +35,45 @@
    4. Scan QR code and enter two consecutive codes.
    5. Save configuration.
 
-## 3. Custom IAM Policy and Role
-- Created `EC2StartStopPolicy`
-- Policy allows starting/stopping EC2 instances
-- Attached to `EC2OperatorRole`
+## 3. Create Custom Policy and Attach to IAM Role
+### A. Create Custom IAM Policy
+   1. Go to **IAM** > **Policies** > **Create policy.**
+   2. Choose JSON, paste:
+   3. **Name:** `EC2StartStopDescribePolicy`
+     - Policy allows starting/stopping EC2 instances
+
+### B. Create and Attach IAM Role
+   1. Go to **IAM** > **Roles** > **Create role.**
+   2. Select **AWS service** > **EC2** (use case: allow EC2 to call AWS services).
+   3. Attach your custom policy.
+   4. **Name the role:** `EC2ControlRole`.
 
 ## Screenshots
 
 Here are the key screenshots:
 
-- **Screenshot 1**: RDS instance
-  ![RDS instance dashboard showing the status as “Available”]()
+- **Screenshot 1**: IAM user creation
+  ![IAM user creation]()
 
 ---
 
-- **Screenshot 2**: MySQL Connected Successfully
-  ![Connected MySQL with database overview]()
+- **Screenshot 2**: Failed attempted access 
+  ![CDenied access when trying to perform restricted actions]()
 
 ---
 
+- **Screenshot 3**: MFA setup confirmation
+  ![MFA setup confirmation]()
 
+---
 
-### 6. Implement a Security Group for Traffic Control:
-   - **Step 1**: Create a Security Group.
-   - Go to the Security Groups section in the EC2 dashboard.
-   - Click on Create Security Group.
-     - **Name**: MySecurityGroup-test
-     - **Description**: Security group for my test EC2 instances
-     - **VPC**: MyVPC-test
+- **Screenshot 5**: Custom policy creation
+  ![Custom policy creation]()
 
-   - **Step 2: Add Inbound Rules**
-   - Click on Inbound Rules and then click Edit inbound rules.
-   - Add rules to allow traffic from the NAT Gateway
-     - **Name**: MySecurityGroup-test
-     - **Type**: SSH
-     - **Protocol**: TCP
-     - **Port Range**: 22
-     - **Source**: My IP (Enter the NAT Gateway's IP address )
-     - **Description**: Allow SSH from NAT Gateway.
-   - Click Save rules.
+---
 
-   - **Step 3: Add Outbound Rules**
-     - By default, security groups allow all outbound traffic, so you usually don’t need to modify outbound rules unless you have specific needs.
-
-   - **Step 4: Apply the Security Group**
-     - Attach this security group to your EC2 instances.
+- **Screenshot 5**: Role creation with attached policy.
+  ![Role creation with attached policy.]()
 
 ## Architectural Diagram
 
